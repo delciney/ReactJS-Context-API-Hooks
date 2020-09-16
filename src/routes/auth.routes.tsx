@@ -3,12 +3,12 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import SignIn from "../pages/SignIn";
 
-function Routes() {
+const AuthRoutes: React.FC = () => {
   return (
     <BrowserRouter>
       <Route path="/" exact component={SignIn} />
     </BrowserRouter>
   );
-}
+};
 
-export default Routes;
+export default AuthRoutes;
