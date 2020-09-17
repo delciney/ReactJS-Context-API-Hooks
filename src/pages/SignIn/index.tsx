@@ -1,13 +1,12 @@
-import React from "react";
-
-import { singIn } from "../../sevices/auth";
+import React, { useContext } from "react";
+import AuthContext from "../../contexts/auth";
 
 import "./index.css";
 
 const SignIn: React.FC = () => {
-  async function handleSingIn() {
-    const response = await singIn();
-    console.log(response);
+  const { signed, singIn } = useContext(AuthContext);
+  function handleSingIn() {
+    singIn();
   }
   return (
     <div className="SignIn">
