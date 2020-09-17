@@ -5,6 +5,7 @@ import "./index.css";
 
 const SignIn: React.FC = () => {
   const { signed, singIn } = useContext(AuthContext);
+  console.log(signed);
   function handleSingIn() {
     singIn();
   }
