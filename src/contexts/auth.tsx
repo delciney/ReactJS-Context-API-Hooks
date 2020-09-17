@@ -1,8 +1,13 @@
 import React, { createContext, useState, useEffect } from "react";
 import * as auth from "../sevices/auth";
+
+interface User {
+  name: string;
+  email: string;
+}
 interface AuthContextData {
   signed: boolean;
-  user: object | null;
+  user: User | null;
   singIn(): Promise<void>;
   singOut(): void;
 }
@@ -10,7 +15,7 @@ interface AuthContextData {
 const AuthContexts = createContext<AuthContextData>({} as AuthContextData);
 
 export const AuthProvider: React.FC = ({ children }) => {
-  const [user, setUser] = useState<object | null>(null);
+  const [user, setUser] = useState<User | null>(null);
   useEffect(() => {
     const storageUser = localStorage.getItem("@RNAuth:user");
     const storageToken = localStorage.getItem("@RNAuth:token");
