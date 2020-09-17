@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
-import AuthContext from "../../contexts/auth";
+import React from "react";
+import { useAuth } from "../../contexts/auth";
 import "./index.css";
 const Dashboard: React.FC = () => {
-  const { singOut, user } = useContext(AuthContext);
+  const { singOut, user } = useAuth();
   function handleSingOut() {
     singOut();
   }

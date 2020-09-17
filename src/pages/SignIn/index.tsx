@@ -1,10 +1,10 @@
-import React, { useContext } from "react";
-import AuthContext from "../../contexts/auth";
+import React from "react";
+import { useAuth } from "../../contexts/auth";
 
 import "./index.css";
 
 const SignIn: React.FC = () => {
-  const { signed, singIn } = useContext(AuthContext);
+  const { signed, singIn } = useAuth();
   console.log(signed);
   function handleSingIn() {
     singIn();

@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 import * as auth from "../sevices/auth";
 
 interface User {
@@ -41,4 +41,7 @@ export const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-export default AuthContexts;
+export function useAuth() {
+  const context = useContext(AuthContexts);
+  return context;
+}
