@@ -26,6 +26,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     localStorage.setItem("@RNAuth:token", response.token);
   }
   function singOut() {
+    localStorage.clear();
     setUser(null);
   }
   return (
